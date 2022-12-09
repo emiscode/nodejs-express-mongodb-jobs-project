@@ -1,2 +1,5 @@
 ### Base resource
 GET http://localhost:3000
+
+### Jobs resource
+GET http://localhost:3000/jobs

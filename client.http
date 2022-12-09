@@ -1,5 +1,14 @@
 ### Base resource
 GET http://localhost:3000
 
-### Jobs resource
+### Get Jobs
 GET http://localhost:3000/jobs
+
+### Create Job
+POST http://localhost:3000/jobs
+content-type: application/json
+
+{
+    "title": "Systems Architect",
+    "company": "Microsoft"
+}

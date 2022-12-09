@@ -1,12 +1,12 @@
 export const jobs = [
   {
     id: 1,
-    title: "Engenheiro de Software",
+    title: "Software Engineer",
     company: "Apple",
   },
   {
     id: 2,
-    title: "Analista de QA",
+    title: "QA Analyst",
     company: "Google",
   },
 ];

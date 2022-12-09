@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-express-mongodb-jobs-project",
+  "version": "1.0.0",
+  "description": "Jobs Project",
+  "author": "Emilio Scodeler",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": ">=18.12.1",
+    "npm": ">=8.19.2"
+  }
+}

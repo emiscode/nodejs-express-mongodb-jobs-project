@@ -12,9 +12,48 @@ app.get("/jobs", (_, res) => {
   res.status(200).json(jobs);
 });
 
+app.get("/jobs/:id", (req, res) => {
+  const { id } = req.params;
+  const index = findById(id);
+
+  if (index !== -1) {
+    res.status(200).send(jobs[index]);
+  } else {
+    res.status(404).send("Job not found");
+  }
+});
+
 app.post("/jobs", (req, res) => {
   jobs.push({ id: jobs.length + 1, ...req.body });
   res.status(201).send("Job created");
 });
+
+app.put("/jobs/:id", (req, res) => {
+  const { id } = req.params;
+  const index = findById(id);
+
+  if (index !== -1) {
+    jobs[index] = { id: Number(id), ...req.body };
+    res.status(200).send("Job updated");
+  } else {
+    res.status(404).send("Job not found");
+  }
+});
+
+app.delete("/jobs/:id", (req, res) => {
+  const { id } = req.params;
+  const index = findById(id);
+
+  if (index !== -1) {
+    delete jobs[index];
+    res.status(200).send("Job deleted");
+  } else {
+    res.status(404).send("Job not found");
+  }
+});
+
+function findById(id) {
+  return jobs.findIndex((job) => job && job.id === Number(id));
+}
 
 export default app;

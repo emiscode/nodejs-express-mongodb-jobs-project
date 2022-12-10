@@ -27,6 +27,20 @@ class JobsController {
       });
   };
 
+  static listBySeniority = (req, res) => {
+    const { seniority } = req.query;
+
+    jobs.find({ seniority }, {}, (err, jobs) => {
+      if (err) {
+        res
+          .status(404)
+          .send({ message: `${err.message} - Could not find job` });
+      } else {
+        res.status(200).send(jobs);
+      }
+    });
+  };
+
   static create = (req, res) => {
     const job = new jobs(req.body);
 

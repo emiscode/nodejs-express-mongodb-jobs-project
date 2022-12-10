@@ -7,6 +7,9 @@ GET http://localhost:3000/jobs
 ### Get Job By Id
 GET http://localhost:3000/jobs/639469352f012e04ca8a05a1
 
+### Get Jobs By Seniority
+GET http://localhost:3000/jobs/find?seniority=Mid-Level
+
 ### Create Job
 POST http://localhost:3000/jobs
 content-type: application/json
@@ -17,11 +20,11 @@ content-type: application/json
 }
 
 ### Update Job
-PUT http://localhost:3000/jobs/639469352f012e04ca8a05a1
+PUT http://localhost:3000/jobs/6393d69f616525079cbc40d3
 content-type: application/json
 
 {
-    "company": "639472efc099a65d87a8e8a1"
+    "seniority": "Mid-Level"
 }
 
 ### Delete Job By Id

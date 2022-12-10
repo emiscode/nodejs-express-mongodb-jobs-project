@@ -12,7 +12,7 @@ POST http://localhost:3000/jobs
 content-type: application/json
 
 {
-    "title": "Systems Architect",
+    "title": "Systems Architect 99",
     "company": "Microsoft"
 }
 

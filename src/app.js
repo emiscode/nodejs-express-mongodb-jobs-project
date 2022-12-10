@@ -32,11 +32,6 @@ app.get("/jobs/:id", (req, res) => {
   }
 });
 
-app.post("/jobs", (req, res) => {
-  jobs.push({ id: jobs.length + 1, ...req.body });
-  res.status(201).send("Job created");
-});
-
 app.put("/jobs/:id", (req, res) => {
   const { id } = req.params;
   const index = findById(id);

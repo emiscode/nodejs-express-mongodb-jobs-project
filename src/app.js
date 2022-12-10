@@ -1,6 +1,6 @@
 import express from "express";
-import { jobs } from "./data/jobs.js";
 import db from "../config/dbConnection.js";
+import jobs from "./models/job.js";
 
 db.on("error", console.log.bind(console, "Connection error"));
 db.once("open", () => {
@@ -15,7 +15,9 @@ app.get("/", (_, res) => {
 });
 
 app.get("/jobs", (_, res) => {
-  res.status(200).json(jobs);
+  jobs.find((_, jobs) => {
+    res.status(200).send(jobs);
+  });
 });
 
 app.get("/jobs/:id", (req, res) => {

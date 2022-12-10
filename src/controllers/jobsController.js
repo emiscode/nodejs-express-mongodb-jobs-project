@@ -2,23 +2,29 @@ import jobs from "../models/Job.js";
 
 class JobsController {
   static listAll = (_, res) => {
-    jobs.find((_, jobs) => {
-      res.status(200).send(jobs);
-    });
+    jobs
+      .find()
+      .populate("company")
+      .exec((_, jobs) => {
+        res.status(200).send(jobs);
+      });
   };
 
   static listById = (req, res) => {
     const { id } = req.params;
 
-    jobs.findById(id, (err, job) => {
-      if (err) {
-        res
-          .status(404)
-          .send({ message: `${err.message} - Could not find job` });
-      } else {
-        res.status(200).send(job);
-      }
-    });
+    jobs
+      .findById(id)
+      .populate("company", "name")
+      .exec((err, job) => {
+        if (err) {
+          res
+            .status(404)
+            .send({ message: `${err.message} - Could not find job` });
+        } else {
+          res.status(200).send(job);
+        }
+      });
   };
 
   static create = (req, res) => {

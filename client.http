@@ -5,7 +5,7 @@ GET http://localhost:3000
 GET http://localhost:3000/jobs
 
 ### Get Job By Id
-GET http://localhost:3000/jobs/63946ddc347a7081365acf69
+GET http://localhost:3000/jobs/639469352f012e04ca8a05a1
 
 ### Create Job
 POST http://localhost:3000/jobs
@@ -17,12 +17,11 @@ content-type: application/json
 }
 
 ### Update Job
-PUT http://localhost:3000/jobs/6393d69f616525079cbc40d3
+PUT http://localhost:3000/jobs/639469352f012e04ca8a05a1
 content-type: application/json
 
 {
-    "title": "Sr. Software Engineer",
-    "company": "Google"
+    "company": "639472efc099a65d87a8e8a1"
 }
 
 ### Delete Job By Id

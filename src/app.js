@@ -1,5 +1,11 @@
 import express from "express";
 import { jobs } from "./data/jobs.js";
+import db from "../config/dbConnection.js";
+
+db.on("error", console.log.bind(console, "Connection error"));
+db.once("open", () => {
+  console.log("Connected to the database");
+});
 
 const app = express();
 app.use(express.json());

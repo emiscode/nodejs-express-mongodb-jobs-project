@@ -6,6 +6,6 @@ const jobSchema = new mongoose.Schema({
   company: String,
 });
 
-const jobs = mongoose.model("jobs", jobSchema);
+const jobs = mongoose.models.jobs || mongoose.model("jobs", jobSchema);
 
 export default jobs;

@@ -7,6 +7,7 @@ router
   .get("/jobs", JobsController.listJobs)
   .get("/jobs/:id", JobsController.listById)
   .post("/jobs", JobsController.createJob)
-  .put("/jobs/:id", JobsController.updateJob);
+  .put("/jobs/:id", JobsController.updateJob)
+  .delete("/jobs/:id", JobsController.deleteJob);
 
 export default router;

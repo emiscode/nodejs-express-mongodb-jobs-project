@@ -21,3 +21,7 @@ In the root directory
 - run the following command to init the Server
 
 `npm i & npm start`
+
+Example using REST Client VSCode extension to test the API routes
+
+![Example](public/example-1.png)

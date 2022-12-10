@@ -5,15 +5,15 @@ GET http://localhost:3000
 GET http://localhost:3000/jobs
 
 ### Get Job By Id
-GET http://localhost:3000/jobs/6394691132f9585051de3d24
+GET http://localhost:3000/jobs/63946ddc347a7081365acf69
 
 ### Create Job
 POST http://localhost:3000/jobs
 content-type: application/json
 
 {
-    "title": "Systems Architect 99",
-    "company": "Microsoft"
+    "title": "Systems Architect",
+    "company": "Apple"
 }
 
 ### Update Job
@@ -22,8 +22,8 @@ content-type: application/json
 
 {
     "title": "Sr. Software Engineer",
-    "company": "Apple"
+    "company": "Google"
 }
 
 ### Delete Job By Id
-DELETE http://localhost:3000/jobs/1
+DELETE http://localhost:3000/jobs/63946ddc347a7081365acf69

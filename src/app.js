@@ -1,6 +1,5 @@
 import express from "express";
 import db from "../config/dbConnection.js";
-import jobs from "./models/job.js";
 import routes from "./routes/index.js";
 
 db.on("error", console.log.bind(console, "Connection error"));
@@ -14,50 +13,5 @@ const app = express();
 app.use(express.json());
 
 routes(app);
-
-app.get("/jobs", (_, res) => {
-  jobs.find((_, jobs) => {
-    res.status(200).send(jobs);
-  });
-});
-
-app.get("/jobs/:id", (req, res) => {
-  const { id } = req.params;
-  const index = findById(id);
-
-  if (index !== -1) {
-    res.status(200).send(jobs[index]);
-  } else {
-    res.status(404).send("Job not found");
-  }
-});
-
-app.put("/jobs/:id", (req, res) => {
-  const { id } = req.params;
-  const index = findById(id);
-
-  if (index !== -1) {
-    jobs[index] = { id: Number(id), ...req.body };
-    res.status(200).send("Job updated");
-  } else {
-    res.status(404).send("Job not found");
-  }
-});
-
-app.delete("/jobs/:id", (req, res) => {
-  const { id } = req.params;
-  const index = findById(id);
-
-  if (index !== -1) {
-    delete jobs[index];
-    res.status(200).send("Job deleted");
-  } else {
-    res.status(404).send("Job not found");
-  }
-});
-
-function findById(id) {
-  return jobs.findIndex((job) => job && job.id === Number(id));
-}
 
 export default app;

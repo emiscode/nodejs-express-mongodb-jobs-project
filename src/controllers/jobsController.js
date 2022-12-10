@@ -48,6 +48,20 @@ class JobsController {
       }
     });
   };
+
+  static deleteJob = (req, res) => {
+    const { id } = req.params;
+
+    jobs.findByIdAndDelete(id, (err) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message} - Could not delete job` });
+      } else {
+        res.status(200).send({ message: "Job deleted" });
+      }
+    });
+  };
 }
 
 export default JobsController;

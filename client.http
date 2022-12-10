@@ -27,3 +27,32 @@ content-type: application/json
 
 ### Delete Job By Id
 DELETE http://localhost:3000/jobs/63946ddc347a7081365acf69
+
+### Base resource
+GET http://localhost:3000
+
+### Get companies
+GET http://localhost:3000/companies
+
+### Get Company By Id
+GET http://localhost:3000/companies/639472efc099a65d87a8e8a1
+
+### Create Company
+POST http://localhost:3000/companies
+content-type: application/json
+
+{
+    "name": "Google"
+}
+
+### Update Company
+PUT http://localhost:3000/companies/639472efc099a65d87a8e8a1
+content-type: application/json
+
+{
+    "name": "Apple Inc."
+}
+
+### Delete company By Id
+DELETE http://localhost:3000/companies/63946ddc347a7081365acf69
+

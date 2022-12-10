@@ -1,7 +1,7 @@
 import jobs from "../models/Job.js";
 
 class JobsController {
-  static listJobs = (_, res) => {
+  static listAll = (_, res) => {
     jobs.find((_, jobs) => {
       res.status(200).send(jobs);
     });
@@ -21,7 +21,7 @@ class JobsController {
     });
   };
 
-  static createJob = (req, res) => {
+  static create = (req, res) => {
     const job = new jobs(req.body);
 
     job.save((err) => {
@@ -35,7 +35,7 @@ class JobsController {
     });
   };
 
-  static updateJob = (req, res) => {
+  static update = (req, res) => {
     const { id } = req.params;
 
     jobs.findByIdAndUpdate(id, { $set: req.body }, (err) => {
@@ -49,7 +49,7 @@ class JobsController {
     });
   };
 
-  static deleteJob = (req, res) => {
+  static delete = (req, res) => {
     const { id } = req.params;
 
     jobs.findByIdAndDelete(id, (err) => {

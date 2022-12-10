@@ -5,6 +5,8 @@ const router = express.Router();
 
 router
   .get("/jobs", JobsController.listJobs)
-  .post("/jobs", JobsController.createJob);
+  .get("/jobs/:id", JobsController.listById)
+  .post("/jobs", JobsController.createJob)
+  .put("/jobs/:id", JobsController.updateJob);
 
 export default router;
